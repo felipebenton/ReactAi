@@ -45,8 +45,8 @@ jobs:
       # Step 7: Run the Traffic command with xvfb
       - name: Run traffic command with xvfb in parallel
         run: |
-             xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' node traffic.js workflow=1 node=1 https://countmytimee.site &
-             xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' node traffic.js workflow=1 node=2 https://healthybmi.site &
-             xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' node traffic.js workflow=1 node=3 https://telefind.xyz &
-             xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0, 1920x1080x24' node traffic.js workflow=1 node=4 https://shortinx.xyz &
-             wait
+          xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0 1920x1080x24' node traffic.js workflow=1 node=1 &
+          xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0 1920x1080x24' node traffic.js workflow=1 node=2 &
+          xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0 1920x1080x24' node traffic.js workflow=1 node=3 &
+          xvfb-run --auto-servernum --server-num=1 --server-args='-screen 0 1920x1080x24' node traffic.js workflow=1 node=4 &
+          wait
